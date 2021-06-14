@@ -44,7 +44,7 @@ class Payment:
         self.created = datetime.now(tz=tzutc())
 
     def check_payment(self):
-        details = bs.get_address_details(address=config.WALLET_BTC, api_key=config.BLOCKCYPHER_TOKEN)
+        details = bs.get_address_details(address=config.WALLET_ETH, api_key=config.BLOCKCYPHER_TOKEN)
         address_details = AddressDetails(**details)
         for transaction in address_details.unconfirmed_txrefs:
             if transaction.get('value') == self.amount:
