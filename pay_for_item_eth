@@ -43,7 +43,7 @@ async def create_invoice(call: types.CallbackQuery, state: FSMContext):
     item_id_eth = int(item_id_eth) - 1
     item = items[item_id_eth]
 
-    amount_eth = item.price_ETH + randint(5, 500)
+    amount_eth = item.price_ETH + randint(10, 60)
     payment_eth = Payment(amount=amount_eth)
     payment_eth.create()
 
